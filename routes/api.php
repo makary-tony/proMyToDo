@@ -13,6 +13,18 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => 'auth:api'], function () {
+
+    /** User routes. */
+    Route::get('/auth/user', 'UserController@show');
+
+    /** List routes. */
+    Route::resource('/list', 'ListController', ['except' => [
+        'edit', 'create'
+    ]]);
+
+    /** Item routes. */
+    Route::resource('/item', 'ItemController', ['except' => [
+        'index', 'show', 'create', 'edit'
+    ]]);
 });

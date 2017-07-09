@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+
+/** Website pages routes. */
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
