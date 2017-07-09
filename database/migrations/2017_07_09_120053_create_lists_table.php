@@ -19,7 +19,7 @@ class CreateListsTable extends Migration
             $table->string('name');
             $table->timestamps();
 
-            $this
+            $table
                 ->foreign('user_id')
                 ->references('id')
                 ->on('users')

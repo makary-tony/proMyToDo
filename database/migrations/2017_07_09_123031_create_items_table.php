@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTodoItemsTable extends Migration
+class CreateItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTodoItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('todo_items', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('todo_list_id');
             $table->string('title');
@@ -21,7 +21,7 @@ class CreateTodoItemsTable extends Migration
 
             $table->foreign('todo_list_id')
                 ->references('id')
-                ->on('todo_lists')
+                ->on('lists')
                 ->onDelete('cascade');
         });
     }
@@ -33,6 +33,6 @@ class CreateTodoItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('todo_items');
+        Schema::dropIfExists('items');
     }
 }

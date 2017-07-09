@@ -22,3 +22,24 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+/** Lists factory */
+$factory->define(App\TodoList::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => 1,
+        'name' => $faker->word,
+    ];
+});
+
+/** Items factory */
+$factory->define(App\TodoItem::class, function (Faker\Generator $faker) {
+
+    if($listsCount = count(App\TodoList::all()) == 0){
+        return ;
+    }
+
+    return [
+        'todo_list_id' => $faker->numberBetween(1, $listsCount),
+        'title' => $faker->sentence(),
+    ];
+});

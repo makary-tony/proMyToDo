@@ -20,3 +20,4 @@ Auth::routes();
 
 /** Website pages routes. */
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/list/{list}', 'ListController@show')->name('list')->middleware('auth');

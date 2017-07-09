@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class TodoList extends Model
 {
     /**
+     * The table name.
+     *
+     * @var string
+     */
+    protected $table = 'lists';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

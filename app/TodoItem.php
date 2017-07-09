@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class TodoItem extends Model
 {
     /**
+     * The model table name.
+     *
+     * @var string
+     */
+    protected $table = 'items';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
