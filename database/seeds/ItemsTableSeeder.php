@@ -14,6 +14,6 @@ class ItemsTableSeeder extends Seeder
         DB::table('items')->delete();
         DB::table('items')->truncate();
 
-        factory(\App\TodoItem::class, 10)->create();
+        factory(\App\TodoItem::class, 50)->create();
     }
 }

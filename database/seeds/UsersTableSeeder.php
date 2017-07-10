@@ -15,8 +15,8 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->truncate();
 
         \App\User::create([
-            'name'      => 'Mahmoud Mokhtar',
-            'email'     => 'mahmoud@birdsol.com',
+            'name'      => 'Test User',
+            'email'     => 'test@mail.com',
             'password'  => bcrypt('password'),
         ]);
     }

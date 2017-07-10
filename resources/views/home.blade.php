@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
                         <!-- todo @makary lists component -->
-                        <!-- <lists></list> -->
+                        <lists></lists>
                     </div>
                 </div>
             </div>

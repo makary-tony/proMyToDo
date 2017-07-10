@@ -26,9 +26,10 @@ class UserTransformer extends TransformerAbstract
     public function transform(User $user)
     {
         return [
-            'name'  => $user->name,
-            'email' => $user->email,
-            'key'   => $user->id,
+            'name'    => $user->name,
+            'email'   => $user->email,
+            'key'     => $user->id,
+            'loading' => false,
         ];
     }
 

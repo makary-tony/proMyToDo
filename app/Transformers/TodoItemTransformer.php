@@ -25,8 +25,9 @@ class TodoItemTransformer extends TransformerAbstract
     public function transform(TodoItem $item)
     {
         return [
-            'title' => $item->title,
-            'key'   => $item->id,
+            'title'     => $item->title,
+            'key'       => $item->id,
+            'loading'   => false,
         ];
     }
 

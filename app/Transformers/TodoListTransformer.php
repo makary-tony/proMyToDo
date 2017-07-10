@@ -25,8 +25,11 @@ class TodoListTransformer extends TransformerAbstract
     public function transform(TodoList $list)
     {
         return [
-            'name' => $list->name,
-            'key'  => $list->id,
+            'name'       => $list->name,
+            'created_at' => $list->created_at,
+            'items_count'=> $list->items->count(),
+            'key'        => $list->id,
+            'loading'    => false,
         ];
     }
 }

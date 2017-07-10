@@ -34,7 +34,7 @@ $factory->define(App\TodoList::class, function (Faker\Generator $faker) {
 /** Items factory */
 $factory->define(App\TodoItem::class, function (Faker\Generator $faker) {
 
-    if($listsCount = count(App\TodoList::all()) == 0){
+    if(($listsCount = App\TodoList::all()->count()) == 0){
         return ;
     }
 
