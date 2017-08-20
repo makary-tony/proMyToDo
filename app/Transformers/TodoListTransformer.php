@@ -4,6 +4,7 @@ namespace App\Transformers;
 
 use App\TodoList;
 use League\Fractal\TransformerAbstract;
+use App\Transformers\ItemTransformer;
 
 class TodoListTransformer extends TransformerAbstract
 {
@@ -13,7 +14,7 @@ class TodoListTransformer extends TransformerAbstract
      * @var array
      */
     protected $availableIncludes = [
-
+        'items'
     ];
 
     /**
@@ -31,5 +32,10 @@ class TodoListTransformer extends TransformerAbstract
             'key'        => $list->id,
             'loading'    => false,
         ];
+    }
+    
+    public function includeItems(TodoList $list)
+    {
+        return $this->collection($list->items, new ItemTransformer());   
     }
 }
