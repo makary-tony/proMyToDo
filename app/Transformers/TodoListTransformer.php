@@ -4,7 +4,7 @@ namespace App\Transformers;
 
 use App\TodoList;
 use League\Fractal\TransformerAbstract;
-use App\Transformers\ItemTransformer;
+use App\Transformers\TodoItemTransformer;
 
 class TodoListTransformer extends TransformerAbstract
 {
@@ -36,6 +36,6 @@ class TodoListTransformer extends TransformerAbstract
     
     public function includeItems(TodoList $list)
     {
-        return $this->collection($list->items, new ItemTransformer());   
+        return $this->collection($list->items, new TodoItemTransformer());   
     }
 }
