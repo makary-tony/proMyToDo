@@ -31,8 +31,9 @@ class ItemController extends ApiBaseController
      */
     public function update(ItemRequest $request, TodoItem $item)
     {
+        $item->update($request->all());
         return $this->response->item(
-            $item->update($request->all()),
+            $item,
             new TodoItemTransformer()
         );
     }

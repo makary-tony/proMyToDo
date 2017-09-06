@@ -59,8 +59,9 @@ class ListController extends ApiBaseController
      */
     public function update(ListRequest $request, TodoList $list)
     {
+        $list->update($request->all());
         return $this->response->item(
-            $list->update($request->all()),
+            $list,
             new TodoListTransformer()
         );
     }
