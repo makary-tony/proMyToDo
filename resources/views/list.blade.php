@@ -10,7 +10,6 @@
                 <div class="panel-heading" style="text-align: center;margin-left: -55px; font-size: 25px;"> {{$list->name}} </div>
             
                 <list :list-id="{{$list->id}}"></list>
-    
             </div>
         </div>
     </div>

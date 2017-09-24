@@ -1,4 +1,4 @@
-
+import VueRouter from 'vue-router';
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -8,11 +8,18 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+Vue.use(VueRouter);
+const routes =[];
+const router = new VueRouter({
+	routes,
+	mode:'history'
+});
 
 /**
  * Require event emitter.
  */
 require('./utilities/event');
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -24,5 +31,6 @@ Vue.component('list', require('./components/lists/list.vue'));
 Vue.component('lists', require('./components/lists/index.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router
 });
